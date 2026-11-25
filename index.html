@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#142B50">
+    <meta name="description" content="Agenda de atividades da Paróquia Nossa Senhora Aparecida de Canoas.">
+
     <title>Agenda Paroquial - Nossa Senhora Aparecida</title>
 
     <style>
@@ -12,36 +15,113 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --azul: #142B50;
+            --azul-claro: #203D68;
+            --dourado: #C5A45B;
+            --fundo: #F5F6F4;
+            --texto: #333333;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f6f4;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
         }
+
+        /* CABEÇALHO */
 
         header {
-            background: #142B50;
+            background: var(--azul);
             color: white;
-            text-align: center;
-            padding: 35px 15px;
+            padding: 25px 20px;
+            border-bottom: 4px solid var(--dourado);
         }
 
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 26px;
+        .cabecalho {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
+
+        .brasao {
+            width: 115px;
+            height: 115px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .identidade h1 {
+            margin: 0 0 10px;
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .identidade p {
+            margin: 0;
+            color: #E5D6A7;
+            font-size: 16px;
+            letter-spacing: 0.4px;
+        }
+
+        .detalhe-dourado {
+            width: 65px;
+            height: 3px;
+            background: var(--dourado);
+            margin-top: 16px;
+        }
+
+        /* CONTEÚDO PRINCIPAL */
 
         main {
             max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 15px;
+            margin: 35px auto;
+            padding: 0 20px;
         }
+
+        .introducao {
+            margin-bottom: 22px;
+        }
+
+        .introducao h2 {
+            color: var(--azul);
+            font-size: 25px;
+            margin: 0 0 10px;
+        }
+
+        .introducao p {
+            margin: 0;
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* CALENDÁRIO */
 
         .agenda {
             background: white;
             padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px #00000012;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000012;
+            border: 1px solid #E8E8E8;
+        }
+
+        .agenda-titulo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--azul);
+            font-size: 17px;
+            font-weight: bold;
+            padding: 5px 5px 15px;
+        }
+
+        .agenda-titulo span {
+            color: var(--dourado);
+            font-size: 23px;
         }
 
         iframe {
@@ -49,72 +129,152 @@
             width: 100%;
             height: 700px;
             border: 0;
+            border-radius: 6px;
         }
+
+        /* RODAPÉ */
 
         footer {
+            background: var(--azul);
+            color: white;
             text-align: center;
-            padding: 25px;
-            color: #666;
-            font-size: 13px;
+            padding: 25px 15px;
+            margin-top: 45px;
         }
 
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        footer .mensagem {
+            color: #E5D6A7;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* RESPONSIVIDADE */
+
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 21px;
+
+            header {
+                padding: 22px 15px;
+            }
+
+            .cabecalho {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .brasao {
+                width: 100px;
+                height: 100px;
+            }
+
+            .identidade h1 {
+                font-size: 22px;
+                line-height: 1.3;
+            }
+
+            .identidade p {
+                font-size: 14px;
+            }
+
+            .detalhe-dourado {
+                margin: 15px auto 0;
+            }
+
+            main {
+                margin: 25px auto;
+                padding: 0 12px;
+            }
+
+            .introducao h2 {
+                font-size: 22px;
+            }
+
+            .agenda {
+                padding: 8px;
+            }
+
+            .agenda-titulo {
+                font-size: 15px;
             }
 
             iframe {
                 height: 650px;
             }
-            
-            .brasao {
-                width: 110px;
-                height: 110px;
-                object-fit: contain;
-                margin-bottom: 15px;
+
+            footer {
+                margin-top: 30px;
             }
-            
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <img
-        src="brasao-nsa.png"
-        alt="Brasão da Paróquia Nossa Senhora Aparecida"
-        class="brasao">
+    <!-- CABEÇALHO -->
 
-    <h1>Paróquia Nossa Senhora Aparecida</h1>
-    <p>Agenda de atividades paroquiais</p>
-</header>
-    
-<main>
-    <h2>Agenda Paroquial</h2>
+    <header>
+        <div class="cabecalho">
 
-    <p>
-        Acompanhe as missas, celebrações,
-        reuniões e eventos da nossa comunidade.
-    </p>
+            <img
+                src="brasao-nsa.png"
+                alt="Brasão da Paróquia Nossa Senhora Aparecida"
+                class="brasao">
 
-    <div class="agenda">
+            <div class="identidade">
+                <h1>Paróquia Nossa Senhora Aparecida</h1>
+                <p>Agenda de atividades paroquiais</p>
+                <div class="detalhe-dourado"></div>
+            </div>
 
-        <iframe
-            src="https://calendar.google.com/calendar/embed?src=cppnsacanoas%40gmail.com&ctz=America%2FSao_Paulo"
-            title="Agenda Paroquial"
-            frameborder="0"
-            scrolling="no">
-        </iframe>
+        </div>
+    </header>
 
-    </div>
-</main>
+    <!-- CONTEÚDO -->
 
-<footer>
-    Paróquia Nossa Senhora Aparecida
-    <br>
-    Unidos na fé e na missão!
-</footer>
+    <main>
+
+        <section class="introducao">
+            <h2>Agenda Paroquial</h2>
+
+            <p>
+                Acompanhe as missas, celebrações,
+                reuniões e eventos da nossa comunidade.
+                Fique por dentro de tudo o que acontece
+                em nossa paróquia!
+            </p>
+        </section>
+
+        <!-- CALENDÁRIO GOOGLE -->
+
+        <section class="agenda">
+
+            <div class="agenda-titulo">
+                <span>▦</span>
+                Calendário de atividades
+            </div>
+
+            <iframe
+                src="https://calendar.google.com/calendar/embed?src=cppnsacanoas%40gmail.com&ctz=America%2FSao_Paulo"
+                title="Calendário da Paróquia Nossa Senhora Aparecida"
+                loading="lazy"
+                scrolling="no">
+            </iframe>
+
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+        <p>Paróquia Nossa Senhora Aparecida</p>
+        <p class="mensagem">Unidos na fé e na missão!</p>
+    </footer>
 
 </body>
 </html>
