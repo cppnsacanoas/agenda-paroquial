@@ -10,6 +10,11 @@
 
     <title>Agenda Paroquial - Nossa Senhora Aparecida</title>
 
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -25,9 +30,10 @@
 
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--fundo);
             color: var(--texto);
+            -webkit-font-smoothing: antialiased;
         }
 
         /* CABEÇALHO */
@@ -56,15 +62,18 @@
 
         .identidade h1 {
             margin: 0 0 10px;
+            font-family: 'Manrope', sans-serif;
             font-size: 27px;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: -0.7px;
         }
 
         .identidade p {
             margin: 0;
             color: #E5D6A7;
-            font-size: 16px;
-            letter-spacing: 0.4px;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
         }
 
         .detalhe-dourado {
@@ -72,23 +81,27 @@
             height: 3px;
             background: var(--dourado);
             margin-top: 16px;
+            border-radius: 3px;
         }
 
         /* CONTEÚDO PRINCIPAL */
 
         main {
             max-width: 1100px;
-            margin: 35px auto;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
         .introducao {
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
         .introducao h2 {
             color: var(--azul);
-            font-size: 25px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.6px;
             margin: 0 0 10px;
         }
 
@@ -96,16 +109,17 @@
             margin: 0;
             color: #666;
             font-size: 15px;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-weight: 400;
         }
 
         /* CALENDÁRIO */
 
         .agenda {
             background: white;
-            padding: 15px;
+            padding: 18px;
             border-radius: 12px;
-            box-shadow: 0 3px 12px #00000012;
+            box-shadow: 0 3px 15px #0000000D;
             border: 1px solid #E8E8E8;
         }
 
@@ -114,9 +128,10 @@
             align-items: center;
             gap: 10px;
             color: var(--azul);
-            font-size: 17px;
-            font-weight: bold;
-            padding: 5px 5px 15px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 5px 5px 18px;
         }
 
         .agenda-titulo span {
@@ -138,13 +153,14 @@
             background: var(--azul);
             color: white;
             text-align: center;
-            padding: 25px 15px;
+            padding: 28px 15px;
             margin-top: 45px;
         }
 
         footer p {
             margin: 5px 0;
-            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
         }
 
         footer .mensagem {
@@ -168,13 +184,13 @@
             }
 
             .brasao {
-                width: 100px;
-                height: 100px;
+                width: 15px;
+                height: 15px;
             }
 
             .identidade h1 {
                 font-size: 22px;
-                line-height: 1.3;
+                line-height: 1.4;
             }
 
             .identidade p {
@@ -186,16 +202,20 @@
             }
 
             main {
-                margin: 25px auto;
+                margin: 28px auto;
                 padding: 0 12px;
             }
 
             .introducao h2 {
-                font-size: 22px;
+                font-size: 23px;
+            }
+
+            .introducao p {
+                font-size: 14px;
             }
 
             .agenda {
-                padding: 8px;
+                padding: 9px;
             }
 
             .agenda-titulo {
